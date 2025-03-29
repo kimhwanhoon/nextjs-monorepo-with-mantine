@@ -1,84 +1,119 @@
-# Turborepo starter
+# Next.js Monorepo with Mantine UI
 
-This Turborepo starter is maintained by the Turborepo core team.
+This is a monorepo project built with [Turborepo](https://turbo.build/repo) featuring multiple Next.js applications that share a common UI package built with Mantine UI.
 
-## Using this example
+## Project Structure
 
-Run the following command:
-
-```sh
-npx create-turbo@latest
+```
+.
+├── apps/
+│   ├── client/         # Client-facing application
+│   └── admin/          # Admin dashboard application
+└── packages/
+    ├── ui/             # Shared UI components with Mantine
+    ├── eslint-config/  # Shared ESLint configuration
+    └── typescript-config/ # Shared TypeScript configuration
 ```
 
-## What's inside?
+## Tech Stack
 
-This Turborepo includes the following packages/apps:
+- **Monorepo Management**: [Turborepo](https://turbo.build/repo)
+- **Package Manager**: [pnpm](https://pnpm.io/)
+- **Frontend Framework**: [Next.js](https://nextjs.org/)
+- **UI Library**: [Mantine UI](https://mantine.dev/)
+- **Styling**: Mantine core styles + Tailwind CSS
+- **Language**: TypeScript
 
-### Apps and Packages
+## Features
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- 🏎️ **Shared UI Components**: Common UI components shared across applications
+- 🔄 **Consistent Design System**: Unified design system with Mantine UI
+- ⚡ **Optimized Development**: Fast refresh and build times with Turborepo
+- 📱 **Responsive Design**: Mobile-first responsive layouts
+- 🛠️ **Type Safety**: Full TypeScript support
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+## Getting Started
 
-### Utilities
+### Prerequisites
 
-This Turborepo has some additional tools already setup for you:
+- Node.js 18 or later
+- pnpm
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/kimhwanhoon/nextjs-monorepo-with-mantine.git
+cd nextjs-monorepo-with-mantine
+```
+
+2. Install dependencies:
+
+```bash
+pnpm install
+```
+
+3. Run the development server:
+
+```bash
+# Run all applications
+pnpm dev
+
+# Run specific applications
+pnpm dev:client  # Run only client app
+pnpm dev:admin   # Run only admin app
+```
+
+4. Open your browser:
+   - Client app: [http://localhost:3000](http://localhost:3000)
+   - Admin app: [http://localhost:3001](http://localhost:3001)
+
+## Development
 
 ### Build
 
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
+```bash
 pnpm build
 ```
 
-### Develop
+### Lint
 
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
+```bash
+pnpm lint
 ```
 
-### Remote Caching
+## UI Package
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+The shared UI package is located in `packages/ui`. It includes common components built with Mantine UI that can be used across all applications.
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+### Usage
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+```tsx
+import { Button } from '@repo/ui';
 
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
+export default function MyComponent() {
+  return (
+    <Button color="blue" size="lg">
+      Click me
+    </Button>
+  );
+}
 ```
 
-## Useful Links
+## Project Structure Details
 
-Learn more about the power of Turborepo:
+### Apps
 
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+- **Client**: The main user-facing application
+- **Admin**: Administration dashboard
+
+### Packages
+
+- **UI**: Shared UI components using Mantine
+- **eslint-config**: Shared ESLint configuration
+- **typescript-config**: Shared TypeScript configuration
+
+## License
+
+MIT
