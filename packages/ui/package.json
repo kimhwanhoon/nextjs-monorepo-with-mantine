@@ -3,8 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./*": "./src/*.tsx"
+    ".": {
+      "import": "./src/index.tsx"
+    },
+    "./styles.css": "./src/styles.css",
+    "./postcss.config": "./postcss.config.cjs"
   },
+  "types": "./src/index.tsx",
   "scripts": {
     "lint": "eslint . --max-warnings 0",
     "generate:component": "turbo gen react-component",
@@ -21,6 +26,11 @@
     "typescript": "5.8.2"
   },
   "dependencies": {
+    "@mantine/core": "^7.17.3",
+    "@mantine/hooks": "^7.17.3",
+    "postcss": "^8.5.3",
+    "postcss-preset-mantine": "^1.17.0",
+    "postcss-simple-vars": "^7.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   }

@@ -1,20 +1,6 @@
-"use client";
+import { ButtonProps } from '@mantine/core';
+import { Button as MantineButton } from '@mantine/core';
 
-import { ReactNode } from "react";
-
-interface ButtonProps {
-  children: ReactNode;
-  className?: string;
-  appName: string;
+export function Button({ children, ...props }: ButtonProps) {
+  return <MantineButton {...props}>{children}</MantineButton>;
 }
-
-export const Button = ({ children, className, appName }: ButtonProps) => {
-  return (
-    <button
-      className={className}
-      onClick={() => alert(`Hello from your ${appName} app!`)}
-    >
-      {children}
-    </button>
-  );
-};
