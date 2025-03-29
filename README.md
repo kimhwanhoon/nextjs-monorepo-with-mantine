@@ -41,20 +41,34 @@ This is a monorepo project built with [Turborepo](https://turbo.build/repo) feat
 
 ### Installation
 
-1. Clone the repository:
+#### Option 1: Fork the repository (Recommended for your own projects)
+
+1. Fork this repository by clicking the "Fork" button at the top right of this page.
+2. Clone your forked repository:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/nextjs-monorepo-with-mantine.git
+cd nextjs-monorepo-with-mantine
+```
+
+#### Option 2: Direct clone
+
+If you just want to try it out without creating a fork:
 
 ```bash
 git clone https://github.com/kimhwanhoon/nextjs-monorepo-with-mantine.git
 cd nextjs-monorepo-with-mantine
 ```
 
-2. Install dependencies:
+### Setup
+
+1. Install dependencies:
 
 ```bash
 pnpm install
 ```
 
-3. Run the development server:
+2. Run the development server:
 
 ```bash
 # Run all applications
@@ -65,7 +79,7 @@ pnpm dev:client  # Run only client app
 pnpm dev:admin   # Run only admin app
 ```
 
-4. Open your browser:
+3. Open your browser:
    - Client app: [http://localhost:3000](http://localhost:3000)
    - Admin app: [http://localhost:3001](http://localhost:3001)
 
