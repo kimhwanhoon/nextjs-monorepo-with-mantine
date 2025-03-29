@@ -60,6 +60,38 @@ git clone https://github.com/kimhwanhoon/nextjs-monorepo-with-mantine.git
 cd nextjs-monorepo-with-mantine
 ```
 
+#### Option 3: Using as a template for a new project
+
+If you want to start a completely new project based on this template:
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/kimhwanhoon/nextjs-monorepo-with-mantine.git new-project-name
+cd new-project-name
+```
+
+2. Remove the existing git history and initialize a new one:
+
+```bash
+rm -rf .git
+git init
+git add .
+git commit -m "Initial commit"
+```
+
+3. Connect to your new GitHub repository:
+
+```bash
+git remote add origin https://github.com/your-username/your-new-repo.git
+git push -u origin main
+```
+
+4. Update project details:
+   - Modify the `package.json` files to update names, descriptions, and versions
+   - Update this README.md to reflect your project
+   - Consider updating the LICENSE file with your name/organization
+
 ### Setup
 
 1. Install dependencies:
